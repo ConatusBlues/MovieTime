@@ -2,8 +2,8 @@
 {
     public class Global
     {
-        public int NewConfirmed { get; set; }
-        public int TotalConfirmed { get; set; }
-        public int TotalDeaths { get; set; }
+        public string Title { get; set; }
+        public string Director { get; set; }
+        public string Genre { get; set; }
     }
 }

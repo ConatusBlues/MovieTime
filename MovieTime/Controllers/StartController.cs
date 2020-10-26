@@ -2,20 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MovieTime.Data;
+using MovieTime.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MovieTime.Controllers
 {
     public class StartController : Controller
     {
-        public IActionResult Index()
+        private IMovieRepository movieRepository;
+
+        public StartController(IMovieRepository movieRepository)
         {
-            return View();
+            this.movieRepository = movieRepository;
         }
 
-        public IActionResult Test()
+        [Route("")]
+        public async Task<IActionResult> Index()
         {
-            return View();
+            try
+            {
+                var model = await movieRepository.GetMovies();
+                return View(model);
+
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("index", "error");
+            }
         }
+
     }
 }

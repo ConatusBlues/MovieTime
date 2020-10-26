@@ -18,7 +18,7 @@ namespace MovieTime.Models.ViewModels
         [Display(Name = "Director")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:N0}")]
         public string Director { get; set; }
-        public string Plot { get; set; }
+        public string Genre { get; set; }
         [DisplayFormat(DataFormatString = "{0:dddd dd MMMM}")]
 
         private List<Movie> movies;
@@ -49,7 +49,7 @@ namespace MovieTime.Models.ViewModels
             {
                 Title = summaryDetail.Title;
                 Director = summaryDetail.Director;
-                Plot = summaryDetail.Plot;
+                Genre = summaryDetail.Genre;
             }
             
 
