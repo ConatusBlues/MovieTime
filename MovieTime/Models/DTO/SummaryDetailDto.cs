@@ -7,7 +7,7 @@ namespace MovieTime.Models.DTO
 {
     public class SummaryDetailDto
     {
-        public string Country { get; set; }
+        public string Movie { get; set; }
         public int NewConfirmed { get; set; }
         public int TotalConfirmed { get; set; }
         public int NewDeaths { get; set; }
