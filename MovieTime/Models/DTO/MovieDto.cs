@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MovieTime.DTO
+namespace MovieTime.Models.DTO
 {
     public class MovieDto
     {

@@ -11,20 +11,18 @@ namespace MovieTime.Models.ViewModels
 {
     public class SummaryViewModel
     {
-        [Display(Name = "Nya bekräftade fall")]
+        [Display(Name = "Title")]
         [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString = "{0:N0} st")]
-        public int NewConfirmed { get; set; }
+        public string Title { get; set; }
 
-        [Display(Name = "Totala antalet bekräftade fall")]
+        [Display(Name = "Director")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:N0}")]
-        public int TotalConfirmed { get; set; }
-        public int TotalDeaths { get; set; }
+        public string Director { get; set; }
+        public string Plot { get; set; }
         [DisplayFormat(DataFormatString = "{0:dddd dd MMMM}")]
-        public DateTime Date { get; set; }
 
         private List<Movie> movies;
 
-        public string SelectedMovie { get; set; } = "Sweden";
         
         [Display(Name ="Välj film")]
         public IEnumerable<SelectListItem> Movies
@@ -49,10 +47,9 @@ namespace MovieTime.Models.ViewModels
             // ger alla värden till våra properties
             if (summaryDetail != null)
             {
-                NewConfirmed = summaryDetail.NewConfirmed;
-                TotalConfirmed = summaryDetail.TotalConfirmed;
-                TotalDeaths = summaryDetail.TotalDeaths;
-                Date = summaryDetail.Date;
+                Title = summaryDetail.Title;
+                Director = summaryDetail.Director;
+                Plot = summaryDetail.Plot;
             }
             
 
@@ -60,7 +57,7 @@ namespace MovieTime.Models.ViewModels
            this.movies = movies
                 .Select(c => new Movie
                 {
-                    Name = c.Movies
+                    Name = c.Movie
                 })
                 .OrderBy(x => x.Name)
                 .ToList();

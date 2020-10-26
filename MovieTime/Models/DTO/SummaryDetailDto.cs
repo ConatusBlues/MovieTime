@@ -7,13 +7,12 @@ namespace MovieTime.Models.DTO
 {
     public class SummaryDetailDto
     {
-        public string Movie { get; set; }
-        public int NewConfirmed { get; set; }
-        public int TotalConfirmed { get; set; }
-        public int NewDeaths { get; set; }
-        public int TotalDeaths { get; set; }
-        public int NewRecovered { get; set; }
-        public int TotalRecovered { get; set; }
-        public DateTime Date { get; set; }
+        public string Title { get; set; }
+        public string Director { get; set; }
+        public string Genre { get; set; }
+        public string Plot { get; set; }
+        public string Language { get; set; }
+        public string Country { get; set; }
+        public string Awards { get; set; }
     }
 }

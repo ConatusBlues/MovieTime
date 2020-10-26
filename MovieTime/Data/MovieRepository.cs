@@ -1,11 +1,15 @@
-﻿using Microsoft.Extensions.Configuration;
-using MovieTime.DTO;
-using MovieTime.Infrastructure;
-using MovieTime.Models.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Runtime.InteropServices;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using MovieTime.Infrastructure;
+using MovieTime.Models.DTO;
+using MovieTime.Models.ViewModels;
+using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace MovieTime.Data
 {
@@ -43,7 +47,7 @@ namespace MovieTime.Data
             await Task.WhenAll(tasks); // kör alla trådar, parallellt
 
             SummaryDetailDto summaryDetail = summary.Result.Movies
-                .Where(c => c.Movie.Equals(movie))
+                .Where(c => c.Title.Equals(movie))
                 .FirstOrDefault();
             return new SummaryViewModel(movies.Result, summaryDetail);
             

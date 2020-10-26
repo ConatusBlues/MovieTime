@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MovieTime.Models.ViewModels;
 using MovieTime.Models.DTO;
-using MovieTime.DTO;
+using MovieTime.Models.ViewModels;
 
 namespace MovieTime.Data
 {
