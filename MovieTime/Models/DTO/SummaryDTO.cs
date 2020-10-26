@@ -9,6 +9,6 @@ namespace MovieTime.DTO
     public class SummaryDTO
     {
         public Global Global { get; set; }
-        public List<SummaryDetailDto> Countries { get; set; }
+        public List<SummaryDetailDto> Movies { get; set; }
     }
 }

@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MovieTime.Models.ViewModels;
+using MovieTime.Models.DTO;
+using MovieTime.DTO;
 
 namespace MovieTime.Data
 {
-    public class IMovieRepository
+    public interface IMovieRepository
     {
         Task<IEnumerable<MovieDto>> GetMovies();
         Task<SummaryDTO> GetSummary();

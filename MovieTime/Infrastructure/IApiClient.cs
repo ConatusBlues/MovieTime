@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MovieTime.Infrastructure
 {
-    public class IApiClient
+    public interface IApiClient
     {
         Task<T> GetAsync<T>(string endpoint);
     }

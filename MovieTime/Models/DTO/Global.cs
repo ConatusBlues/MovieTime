@@ -1,4 +1,4 @@
-﻿namespace CovidWeb.Models.DTO
+﻿namespace MovieTime.Models.DTO
 {
     public class Global
     {
